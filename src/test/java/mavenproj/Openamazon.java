@@ -2,6 +2,7 @@ package mavenproj;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -23,5 +24,9 @@ public class Openamazon {
 		driver.get("https://www.amazon.in/");
 		System.out.println(driver.getTitle());
 	}
-	
+	@AfterTest
+	public void close()
+	{
+		driver.close();
+	}
 }
